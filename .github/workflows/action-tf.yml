@@ -7,8 +7,10 @@ on:
   workflow_dispatch:
   workflow_call:
   pull_request: 
-    branches: [main]
-    types: [opened]
+    types:
+      - opened
+    branches:
+      - 'main'
 env:
   tf_actions_working_dir: .
 # defaults:
