@@ -1,0 +1,16 @@
+name: Infrastructure provisioning using teraform
+
+on:
+  workflow_dispatch:
+  workflow_call:
+jobs:
+  terraform-actions:
+    name: Infra provisioning
+    runs-on: ubuntu-24.04
+    steps:
+      - name: checkout reposistory
+        uses: actions/checkout@v5
+      - name: Terraform setup
+        uses: hashicrop/setup-terraform@v3
+      - name: check terraform cli version
+        run: terraform --version
