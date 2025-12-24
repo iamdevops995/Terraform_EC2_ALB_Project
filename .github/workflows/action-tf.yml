@@ -4,13 +4,15 @@ permissions:
   contents: read
   pull-requests: write
 on:
+  pull_request_target:
+    branches: [ main ]
   workflow_dispatch:
   workflow_call:
-  pull_request: 
-    types:
-      - opened
-    branches:
-      - 'main'
+  # pull_request: 
+  #   types:
+  #     - opened
+  #   branches:
+  #     - 'main'
 env:
   tf_actions_working_dir: .
 # defaults:
