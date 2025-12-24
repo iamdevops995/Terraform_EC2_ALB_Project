@@ -22,6 +22,8 @@ jobs:
   terraform-setup:
     name: Terraform setup
     runs-on: ubuntu-24.04
+    environment:
+      name: production
     steps:
       - name: checkout reposistory
         uses: actions/checkout@v5
@@ -48,6 +50,9 @@ jobs:
         id: plan
         run: terraform plan -no-color -input=false  | tee plan.txt
         continue-on-error: true
+      - name: Terraform Apply
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        run: terraform apply -auto-approve
       - uses: actions/github-script@v7
         if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
         env:
@@ -108,4 +113,3 @@ jobs:
 
 
 
-            
