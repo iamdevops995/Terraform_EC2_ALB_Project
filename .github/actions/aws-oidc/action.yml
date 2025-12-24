@@ -1,7 +1,7 @@
 runs:
   using: "composite"
   steps:
-    - uses: aws-actions/configure-aws-credentials@v4
+    - uses: aws-actions/configure-aws-credentials@v5.1.1
       with:
-        role-to-assume: "<role_name>"
-        aws-region: "<aws-region-spec>"
+        role-to-assume: arn:aws:iam::537726824414:role/OpenIDGithubRole
+        aws-region: us-east-1
