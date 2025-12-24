@@ -16,6 +16,9 @@ jobs:
         run: terraform --version
       - name: aws-configure
         uses: ./.github/actions/aws-oidc/
+        with:
+          role-to-assume: arn:aws:iam::537726824414:role/OpenIDGithubRole
+          aws-region: us-east-1
       - name: Terraform format
         id: fmt
         run: terraform fmt -check
