@@ -1,5 +1,7 @@
 name: Infrastructure provisioning using teraform
-
+permissions:
+  id-token: write
+  contents: read
 on:
   workflow_dispatch:
   workflow_call:
