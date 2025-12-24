@@ -11,6 +11,6 @@ jobs:
       - name: checkout reposistory
         uses: actions/checkout@v5
       - name: Terraform setup
-        uses: hashicrop/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v3
       - name: check terraform cli version
         run: terraform --version
