@@ -1,8 +1,5 @@
 name: 'OpenID connect to AWS'
 description: 'OpenID connect to AWS'
-permissions:
-  id-token: write
-  contents: read
 inputs:
   role-to-assume:
     description: "Provide role for OpenID Connect"
@@ -14,9 +11,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-  permissions:
-    id-token: write
-    contents: read
     - name: Connect to aws using OIDC
       uses: aws-actions/configure-aws-credentials@v5.1.1
       with:
