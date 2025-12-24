@@ -14,6 +14,8 @@ jobs:
         uses: hashicorp/setup-terraform@v3
       - name: check terraform cli version
         run: terraform --version
+      - name: aws-configure
+        uses: ./.github/actions/aws-oidc
       - name: Terraform format
         id: fmt
         run: terraform fmt -check
