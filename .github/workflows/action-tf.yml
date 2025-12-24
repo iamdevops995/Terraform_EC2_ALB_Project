@@ -6,6 +6,9 @@ permissions:
 on:
   workflow_dispatch:
   workflow_call:
+  pull_request: 
+    branches: [main]
+    types: [opened]
 env:
   tf_actions_working_dir: .
 # defaults:
