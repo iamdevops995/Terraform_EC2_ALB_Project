@@ -14,11 +14,11 @@ inputs:
 runs:
   using: "composite"
   steps:
+  permissions:
+    id-token: write
+    contents: read
     - name: Connect to aws using OIDC
       uses: aws-actions/configure-aws-credentials@v5.1.1
-      permissions:
-        id-token: write
-        contents: read
       with:
         role-to-assume: ${{ inputs.role-to-assume }}
         aws-region: ${{ inputs.aws-region }}
