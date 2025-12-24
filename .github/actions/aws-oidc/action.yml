@@ -1,0 +1,7 @@
+runs:
+  using: "composite"
+  steps:
+    - uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: "<role_name>"
+        aws-region: "<aws-region-spec>"
