@@ -13,6 +13,12 @@
 This repository demonstrates secure AWS infrastructure provisioning using Terraform and GitHub Actions with OIDC-based authentication.
 No long-lived AWS credentials are stored in GitHub.
 
+### Infrastructure: 
+
+<p align="center">
+  <img src="images/EC2_ALB_INFRA.png" alt="Architecture" width="800">
+</p>
+
 📌 Purpose
 
 Provision AWS infrastructure using Terraform
